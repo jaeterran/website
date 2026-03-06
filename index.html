@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloTerran | The Web3 App Store</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px 20px;
+        }
+        .pre-header {
+            color: #ff3366;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+        p.subtitle {
+            font-size: 1.25rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .primary-btn {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        .primary-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .incentive-block {
+            background-color: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .incentive-block h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .incentive-block ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #b0b0b0;
+        }
+        .incentive-block li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .incentive-block li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff3366;
+        }
+        .multiplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .multiplier-card {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+        .multiplier-rate {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .multiplier-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="pre-header">In Stealth. Early Access Open.</div>
+        
+        <h1>Native Distribution is Here.<br>Secure Your Genesis Claim.</h1>
+        
+        <p class="subtitle">The first OEM-embedded Web3 app store. Factory-integrated. Hardware-secured. Stop waiting for Big Tech to allow crypto. We are building it into the OS.</p>
+        
+        <div class="cta-container">
+            <a href="#" class="primary-btn">Connect Wallet to Claim</a>
+        </div>
+        
+        <div class="incentive-block">
+            <h3>The $100 USDC Deposit Mechanism</h3>
+            <ul>
+                <li><strong>Mint the Genesis NFT:</strong> Your deposit mints your permanent hardware claim ticket and VIP ecosystem pass.</li>
+                <li><strong>Farm While You Wait:</strong> Your deposit instantly activates time-weighted Terran Point farming. Every hour you wait to deposit is future ecosystem value lost.</li>
+            </ul>
+        </div>
+
+        <div class="incentive-block">
+            <h3>Multiply Your Yield</h3>
+            <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Don't just hold. Recruit. Generate your unique referral link and upgrade your daily multiplier.</p>
+            
+            <div class="multiplier-grid">
+                <div class="multiplier-card">
+                    <div class="multiplier-rate">1.0x</div>
+                    <div class="multiplier-label">Base (0 Referrals)</div>
+                </div>
+                <div class="multiplier-card">
+                    <div class="multiplier-rate">1.2x</div>
+                    <div class="multiplier-label">Scout (1-4 Referrals)</div>
+                </div>
+                <div class="multiplier-card">
+                    <div class="multiplier-rate">1.5x</div>
+                    <div class="multiplier-label">Node (5-19 Referrals)</div>
+                </div>
+                <div class="multiplier-card">
+                    <div class="multiplier-rate">2.0x</div>
+                    <div class="multiplier-label">Validator (20+)</div>
+                </div>
+            </div>
+            <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus upon deposit.</p>
+        </div>
+    </div>
+
+</body>
+</html>
