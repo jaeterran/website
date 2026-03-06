@@ -11,16 +11,29 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
+        }
+        
+        /* Container and Section Spacing */
+        .section {
+            padding: 80px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            flex-direction: column;
             text-align: center;
         }
         .container {
-            max-width: 800px;
-            padding: 40px 20px;
+            max-width: 900px;
+            width: 100%;
         }
+        .alt-bg {
+            background-color: #111111;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Typography */
         .pre-header {
             color: #ff3366;
             font-size: 0.85rem;
@@ -35,12 +48,24 @@
             line-height: 1.1;
             font-weight: 800;
         }
+        h2 {
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+        }
         p.subtitle {
             font-size: 1.25rem;
             color: #a0a0a0;
-            line-height: 1.6;
             margin-bottom: 40px;
         }
+        p.body-text {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        /* Buttons */
         .cta-container {
             display: flex;
             flex-direction: column;
@@ -58,38 +83,35 @@
             border-radius: 8px;
             transition: background-color 0.2s;
         }
-        .primary-btn:hover {
-            background-color: #e0e0e0;
+        .primary-btn:hover { background-color: #e0e0e0; }
+        
+        .secondary-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #333;
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
         }
+        .secondary-btn:hover { border-color: #ff3366; }
+
+        /* Module 1: Incentive Blocks */
         .incentive-block {
-            background-color: #111111;
-            border: 1px solid #333333;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
             border-radius: 12px;
             padding: 25px;
             text-align: left;
             margin-bottom: 40px;
         }
-        .incentive-block h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-        .incentive-block ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            color: #b0b0b0;
-        }
-        .incentive-block li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .incentive-block li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #ff3366;
-        }
+        .incentive-block h3 { margin-top: 0; font-size: 1.2rem; }
+        .incentive-block ul { list-style-type: none; padding: 0; margin: 0; color: #b0b0b0; }
+        .incentive-block li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .incentive-block li::before { content: "→"; position: absolute; left: 0; color: #ff3366; }
+        
         .multiplier-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -97,67 +119,139 @@
             margin-top: 20px;
         }
         .multiplier-card {
-            background-color: #1a1a1a;
+            background-color: #222;
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #222;
+            border: 1px solid #333;
+            text-align: center;
         }
-        .multiplier-rate {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffffff;
+        .multiplier-rate { font-size: 1.5rem; font-weight: bold; color: #ffffff; }
+        .multiplier-label { font-size: 0.85rem; color: #888; margin-top: 5px; }
+
+        /* Grid Layouts for Modules 2 & 3 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            text-align: left;
         }
-        .multiplier-label {
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 5px;
+        .feature-card {
+            background-color: #161616;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+        }
+        .feature-card h4 {
+            color: #ff3366;
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="pre-header">In Stealth. Early Access Open.</div>
-        
-        <h1>Native Distribution is Here.<br>Secure Your Genesis Claim.</h1>
-        
-        <p class="subtitle">The first OEM-embedded Web3 app store. Factory-integrated. Hardware-secured. Stop waiting for Big Tech to allow crypto. We are building it into the OS.</p>
-        
-        <div class="cta-container">
-            <a href="#" class="primary-btn">Connect Wallet to Claim</a>
-        </div>
-        
-        <div class="incentive-block">
-            <h3>The $100 USDC Deposit Mechanism</h3>
-            <ul>
-                <li><strong>Mint the Genesis NFT:</strong> Your deposit mints your permanent hardware claim ticket and VIP ecosystem pass.</li>
-                <li><strong>Farm While You Wait:</strong> Your deposit instantly activates time-weighted Terran Point farming. Every hour you wait to deposit is future ecosystem value lost.</li>
-            </ul>
-        </div>
-
-        <div class="incentive-block">
-            <h3>Multiply Your Yield</h3>
-            <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Don't just hold. Recruit. Generate your unique referral link and upgrade your daily multiplier.</p>
+    <div class="section">
+        <div class="container">
+            <div class="pre-header">In Stealth. Early Access Open.</div>
             
-            <div class="multiplier-grid">
-                <div class="multiplier-card">
-                    <div class="multiplier-rate">1.0x</div>
-                    <div class="multiplier-label">Base (0 Referrals)</div>
+            <h1>Native Distribution is Here.<br>Secure Your Genesis Claim.</h1>
+            <p class="subtitle">The first OEM-embedded Web3 app store. Factory-integrated. Hardware-secured. Stop waiting for Big Tech to allow crypto. We are building it into the OS.</p>
+            
+            <div class="cta-container">
+                <a href="#" class="primary-btn">Connect Wallet to Claim</a>
+            </div>
+            
+            <div class="incentive-block">
+                <h3>The $100 USDC Deposit Mechanism</h3>
+                <ul>
+                    <li><strong>Mint the Genesis NFT:</strong> Your deposit mints your permanent hardware claim ticket and VIP ecosystem pass.</li>
+                    <li><strong>Farm While You Wait:</strong> Your deposit instantly activates time-weighted Terran Point farming. Every hour you wait is future ecosystem value lost.</li>
+                </ul>
+            </div>
+
+            <div class="incentive-block">
+                <h3>Multiply Your Yield</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Don't just hold. Recruit. Generate your unique referral link and upgrade your daily multiplier.</p>
+                
+                <div class="multiplier-grid">
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.0x</div>
+                        <div class="multiplier-label">Base (0 Referrals)</div>
+                    </div>
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.2x</div>
+                        <div class="multiplier-label">Scout (1-4 Referrals)</div>
+                    </div>
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.5x</div>
+                        <div class="multiplier-label">Node (5-19 Referrals)</div>
+                    </div>
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">2.0x</div>
+                        <div class="multiplier-label">Validator (20+)</div>
+                    </div>
                 </div>
-                <div class="multiplier-card">
-                    <div class="multiplier-rate">1.2x</div>
-                    <div class="multiplier-label">Scout (1-4 Referrals)</div>
+                <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section alt-bg">
+        <div class="container">
+            <h2>Hardware is a Commodity.<br>Distribution is the Moat.</h2>
+            <p class="subtitle">True Web3 adoption requires factory-level OS integration.</p>
+            
+            <p class="body-text">Forcing users into walled gardens and browser extensions will never drive mass adoption. Terran is the agnostic aggregator—natively embedded into partner Android devices at the factory, starting with our launch partner, <strong>Schok</strong>. Schok is a proven manufacturer supplying hardware for major Tier-1 telecom carriers, including T-Mobile, Verizon, and Boost Mobile.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>The Trust Layer</h4>
+                    <p>We provide verified developer access, rigorous app curation, and strict policy enforcement, ensuring a scam-free environment for retail consumers.</p>
                 </div>
-                <div class="multiplier-card">
-                    <div class="multiplier-rate">1.5x</div>
-                    <div class="multiplier-label">Node (5-19 Referrals)</div>
+                <div class="feature-card">
+                    <h4>Hardware Isolation</h4>
+                    <p>Cryptographic keys are completely isolated from the standard Android OS via a Trusted Execution Environment (TEE), offering ironclad protection without sacrificing UX.</p>
                 </div>
-                <div class="multiplier-card">
-                    <div class="multiplier-rate">2.0x</div>
-                    <div class="multiplier-label">Validator (20+)</div>
+                <div class="feature-card">
+                    <h4>Agentic AI Ready</h4>
+                    <p>By securing the hardware layer, Terran creates the exact local, privacy-preserving infrastructure required to run the future agentic AI economy securely on-device.</p>
                 </div>
             </div>
-            <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus upon deposit.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2>Stop Building Mini-Apps.<br>Start Building Native.</h2>
+            <p class="subtitle">The Terran App Builder SDK eliminates Android fragmentation.</p>
+            
+            <p class="body-text">Current Web3 mobile UX is broken. We are opening our proprietary Crypto Wallet and TEE SDKs to top-tier protocols. Write your application once, and Terran handles the rich, frictionless integration with native hardware features across our entire network of partner OEMs.</p>
+            
+            <div class="feature-grid" style="margin-bottom: 40px;">
+                <div class="feature-card">
+                    <h4>On-Chain Progression</h4>
+                    <p>Hit integration milestones, pass the Trust Layer review, and claim your verifiable on-chain certificates.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Virtual Device Lab</h4>
+                    <p>Top-tier developers unlock exclusive API keys to test code directly on physical Schok hardware over the internet.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Day One Placement</h4>
+                    <p>Complete integration before the hardware ships and secure guaranteed premium placement in the Terran App Store.</p>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <a href="#" class="secondary-btn">Apply for SDK Early Access</a>
+            </div>
         </div>
     </div>
 
