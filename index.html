@@ -98,7 +98,49 @@
         }
         .secondary-btn:hover { border-color: #ff3366; }
 
-        /* Module 1 & Pre-Sale Blocks */
+        /* Module 1.5: Hardware Layout */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+        @media (max-width: 768px) {
+            .split-layout { grid-template-columns: 1fr; }
+        }
+        .image-placeholder {
+            background-color: #1a1a1a;
+            border: 2px dashed #444;
+            border-radius: 12px;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 20px;
+            text-align: center;
+        }
+        .spec-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0 0;
+        }
+        .spec-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #222;
+            color: #a0a0a0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+        .spec-list li strong { color: #ffffff; }
+
+        /* Modules 2 & 3: Financial & Grid Blocks */
         .incentive-block {
             background-color: #1a1a1a;
             border: 1px solid #333;
@@ -128,7 +170,6 @@
         .multiplier-rate { font-size: 1.5rem; font-weight: bold; color: #ffffff; }
         .multiplier-label { font-size: 0.85rem; color: #888; margin-top: 5px; }
 
-        /* Grid Layouts for Modules 2, 3 & Features */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -142,19 +183,9 @@
             border-radius: 12px;
             border: 1px solid #2a2a2a;
         }
-        .feature-card h4 {
-            color: #ff3366;
-            margin-top: 0;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        .feature-card p {
-            color: #a0a0a0;
-            font-size: 0.95rem;
-            margin: 0;
-        }
+        .feature-card h4 { color: #ff3366; margin-top: 0; font-size: 1.2rem; margin-bottom: 15px; }
+        .feature-card p { color: #a0a0a0; font-size: 0.95rem; margin: 0; }
         
-        /* New Consumer Bridge Highlight */
         .consumer-highlight {
             border-color: #444;
             background: linear-gradient(145deg, #1a1a1a, #111);
@@ -178,119 +209,24 @@
 
     <div class="section alt-bg">
         <div class="container">
-            <h2>Why Upgrade to a Web3 Native Device?</h2>
-            <p class="subtitle">Because you shouldn't have to fight your phone to use your assets.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card consumer-highlight">
-                    <h4>Spend Crypto Like Cash</h4>
-                    <p>Natively integrated wallets mean you can use USDC for everyday purchases. Buy coffee, split bills, and manage your portfolio without jumping between exchanges and banking apps.</p>
+            <div class="split-layout">
+                <div class="image-placeholder">
+                    <span style="font-size: 2rem; color: #444; margin-bottom: 10px;">📱</span>
+                    [ Placeholder: High-Res Render of Schok Gear ]
                 </div>
-                <div class="feature-card consumer-highlight">
-                    <h4>Ditch the Mini-Apps</h4>
-                    <p>Stop relying on clunky mobile browser extensions. Download true, native Web3 applications directly to your home screen for a frictionless, high-speed experience.</p>
-                </div>
-                <div class="feature-card consumer-highlight">
-                    <h4>Hardware-Grade Security</h4>
-                    <p>Your private keys are no longer vulnerable to software hacks. They are locked inside a dedicated, isolated chip on the phone's motherboard, offering hardware-wallet security with Instagram-level ease of use.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="pre-order">
-        <div class="container">
-            <h2>Secure Your Spot in the Ecosystem.</h2>
-            <p class="subtitle">Reserving your device isn't just a pre-order. It's an early stake in the network.</p>
-
-            <div class="incentive-block">
-                <h3>The $100 USDC Reservation Deposit</h3>
-                <ul>
-                    <li><strong>Claim Your Phone:</strong> Your $100 deposit reserves a physical Android smartphone from the first manufacturing batch with our hardware partner, Schok.</li>
-                    <li><strong>Mint & Farm:</strong> Your deposit instantly mints a Genesis NFT receipt to your wallet and activates time-weighted Terran Point farming. The earlier you reserve, the more points you farm before launch.</li>
-                </ul>
-                <div class="cta-container" style="margin-top: 25px; align-items: flex-start;">
-                    <a href="#" class="primary-btn" style="padding: 12px 30px; font-size: 1rem;">Connect Wallet to Deposit $100</a>
-                </div>
-            </div>
-
-            <div class="incentive-block">
-                <h3>Multiply Your Point Yield</h3>
-                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Generate your unique referral link to move up the tiers and multiply your daily farming rate.</p>
                 
-                <div class="multiplier-grid">
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.0x</div>
-                        <div class="multiplier-label">Base (0 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.2x</div>
-                        <div class="multiplier-label">Scout (1-4 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.5x</div>
-                        <div class="multiplier-label">Node (5-19 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">2.0x</div>
-                        <div class="multiplier-label">Validator (20+)</div>
-                    </div>
-                </div>
-                <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus upon deposit.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section alt-bg">
-        <div class="container">
-            <h2>Hardware is a Commodity.<br>Distribution is the Moat.</h2>
-            
-            <p class="body-text">Forcing users into walled gardens and browser extensions will never drive mass adoption. Terran is the agnostic aggregator—natively embedded into partner Android devices at the factory, starting with our launch partner, <strong>Schok</strong>. Schok is a proven manufacturer supplying hardware for major Tier-1 telecom carriers, including T-Mobile, Verizon, and Boost Mobile.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>The Trust Layer</h4>
-                    <p>We provide verified developer access, rigorous app curation, and strict policy enforcement, ensuring a scam-free environment for retail consumers.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Hardware Isolation</h4>
-                    <p>Cryptographic keys are completely isolated from the standard Android OS via a Trusted Execution Environment (TEE), offering ironclad protection without sacrificing UX.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Agentic AI Ready</h4>
-                    <p>By securing the hardware layer, Terran creates the exact local, privacy-preserving infrastructure required to run the future agentic AI economy securely on-device.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>Stop Building Mini-Apps.<br>Start Building Native.</h2>
-            <p class="subtitle">The Terran App Builder SDK eliminates Android fragmentation.</p>
-            
-            <p class="body-text">Current Web3 mobile UX is broken. We are opening our proprietary Crypto Wallet and TEE SDKs to top-tier protocols. Write your application once, and Terran handles the rich, frictionless integration with native hardware features across our entire network of partner OEMs.</p>
-            
-            <div class="feature-grid" style="margin-bottom: 40px;">
-                <div class="feature-card">
-                    <h4>On-Chain Progression</h4>
-                    <p>Hit integration milestones, pass the Trust Layer review, and claim your verifiable on-chain certificates.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Virtual Device Lab</h4>
-                    <p>Top-tier developers unlock exclusive API keys to test code directly on physical Schok hardware over the internet.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Day One Placement</h4>
-                    <p>Complete integration before the hardware ships and secure guaranteed premium placement in the Terran App Store.</p>
-                </div>
-            </div>
-
-            <div class="cta-container">
-                <a href="#" class="secondary-btn">Apply for SDK Early Access</a>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                <div>
+                    <h2 style="margin-bottom: 10px; font-size: 2.2rem;">Meet the Schok Gear.</h2>
+                    <p class="subtitle" style="text-align: left; font-size: 1.1rem; margin-bottom: 20px;">Flagship performance backed by Tier-1 telecom standards.</p>
+                    
+                    <p class="body-text" style="margin-bottom: 15px;">
+                        We didn't reinvent the wheel; we partnered with the experts. Schok is a proven, high-volume hardware manufacturer trusted by the biggest networks in the world, including <strong>T-Mobile, Verizon, and Boost Mobile</strong>.
+                    </p>
+                    <p class="body-text" style="margin-bottom: 25px;">
+                        The Schok Gear delivers enterprise-grade reliability, providing the perfect physical foundation for Terran's Web3 operating system.
+                    </p>
+                    
+                    <h4 style="color: #ffffff; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px;">Device Specifications</h4>
+                    <ul class="spec-list">
+                        <li><strong>Display</strong> <span>[ e.g., 6.7" OLED ]</span></li>
+                        <li><strong>Processor</strong> <span>[ e.g., Snapdragon 8
