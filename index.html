@@ -98,7 +98,7 @@
         }
         .secondary-btn:hover { border-color: #ff3366; }
 
-        /* Module 1: Incentive Blocks */
+        /* Module 1 & Pre-Sale Blocks */
         .incentive-block {
             background-color: #1a1a1a;
             border: 1px solid #333;
@@ -128,7 +128,7 @@
         .multiplier-rate { font-size: 1.5rem; font-weight: bold; color: #ffffff; }
         .multiplier-label { font-size: 0.85rem; color: #888; margin-top: 5px; }
 
-        /* Grid Layouts for Modules 2 & 3 */
+        /* Grid Layouts for Modules 2, 3 & Features */
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -153,6 +153,12 @@
             font-size: 0.95rem;
             margin: 0;
         }
+        
+        /* New Consumer Bridge Highlight */
+        .consumer-highlight {
+            border-color: #444;
+            background: linear-gradient(145deg, #1a1a1a, #111);
+        }
     </style>
 </head>
 <body>
@@ -161,24 +167,56 @@
         <div class="container">
             <div class="pre-header">In Stealth. Early Access Open.</div>
             
-            <h1>The First Smartphone Built for Web3.<br>Secure Your Device.</h1>
-            <p class="subtitle">We partnered with Schok to embed the Terran App Store directly into the Android OS. No clunky browser extensions. Reserve your physical smartphone today and farm rewards while you wait.</p>
+            <h1>The Smartphone Built for the Crypto Economy.</h1>
+            <p class="subtitle">Meet the device where Web3 is finally native. Partnering with Schok, we've embedded the Terran App Store directly into the Android OS. Experience crypto as it was meant to be: effortless, invisible, and secure.</p>
             
             <div class="cta-container">
-                <a href="#" class="primary-btn">Connect Wallet to Pre-Order</a>
+                <a href="#pre-order" class="primary-btn">Reserve Your Hardware</a>
             </div>
+        </div>
+    </div>
+
+    <div class="section alt-bg">
+        <div class="container">
+            <h2>Why Upgrade to a Web3 Native Device?</h2>
+            <p class="subtitle">Because you shouldn't have to fight your phone to use your assets.</p>
             
+            <div class="feature-grid">
+                <div class="feature-card consumer-highlight">
+                    <h4>Spend Crypto Like Cash</h4>
+                    <p>Natively integrated wallets mean you can use USDC for everyday purchases. Buy coffee, split bills, and manage your portfolio without jumping between exchanges and banking apps.</p>
+                </div>
+                <div class="feature-card consumer-highlight">
+                    <h4>Ditch the Mini-Apps</h4>
+                    <p>Stop relying on clunky mobile browser extensions. Download true, native Web3 applications directly to your home screen for a frictionless, high-speed experience.</p>
+                </div>
+                <div class="feature-card consumer-highlight">
+                    <h4>Hardware-Grade Security</h4>
+                    <p>Your private keys are no longer vulnerable to software hacks. They are locked inside a dedicated, isolated chip on the phone's motherboard, offering hardware-wallet security with Instagram-level ease of use.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="pre-order">
+        <div class="container">
+            <h2>Secure Your Spot in the Ecosystem.</h2>
+            <p class="subtitle">Reserving your device isn't just a pre-order. It's an early stake in the network.</p>
+
             <div class="incentive-block">
-                <h3>The $100 USDC Deposit Mechanism</h3>
+                <h3>The $100 USDC Reservation Deposit</h3>
                 <ul>
-                    <li><strong>Reserve Your Hardware:</strong> Your $100 deposit secures your physical Schok Android smartphone from the first manufacturing batch.</li>
-                    <li><strong>Mint & Farm:</strong> Your deposit mints a Genesis NFT receipt, instantly activating time-weighted Terran Point farming. Every hour you wait is future ecosystem value lost.</li>
+                    <li><strong>Claim Your Phone:</strong> Your $100 deposit reserves a physical Android smartphone from the first manufacturing batch with our hardware partner, Schok.</li>
+                    <li><strong>Mint & Farm:</strong> Your deposit instantly mints a Genesis NFT receipt to your wallet and activates time-weighted Terran Point farming. The earlier you reserve, the more points you farm before launch.</li>
                 </ul>
+                <div class="cta-container" style="margin-top: 25px; align-items: flex-start;">
+                    <a href="#" class="primary-btn" style="padding: 12px 30px; font-size: 1rem;">Connect Wallet to Deposit $100</a>
+                </div>
             </div>
 
             <div class="incentive-block">
-                <h3>Multiply Your Yield</h3>
-                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Don't just hold. Recruit. Generate your unique referral link and upgrade your daily multiplier.</p>
+                <h3>Multiply Your Point Yield</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Generate your unique referral link to move up the tiers and multiply your daily farming rate.</p>
                 
                 <div class="multiplier-grid">
                     <div class="multiplier-card">
@@ -198,7 +236,7 @@
                         <div class="multiplier-label">Validator (20+)</div>
                     </div>
                 </div>
-                <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus.</p>
+                <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Connected a wallet with Metis, Goat Network, or DEXTools history? Enjoy an instant one-time point bonus upon deposit.</p>
             </div>
         </div>
     </div>
@@ -206,7 +244,6 @@
     <div class="section alt-bg">
         <div class="container">
             <h2>Hardware is a Commodity.<br>Distribution is the Moat.</h2>
-            <p class="subtitle">True Web3 adoption requires factory-level OS integration.</p>
             
             <p class="body-text">Forcing users into walled gardens and browser extensions will never drive mass adoption. Terran is the agnostic aggregator—natively embedded into partner Android devices at the factory, starting with our launch partner, <strong>Schok</strong>. Schok is a proven manufacturer supplying hardware for major Tier-1 telecom carriers, including T-Mobile, Verizon, and Boost Mobile.</p>
             
