@@ -24,7 +24,7 @@
             text-align: center;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
         }
         .alt-bg {
@@ -57,6 +57,9 @@
             font-size: 1.25rem;
             color: #a0a0a0;
             margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         p.body-text {
             font-size: 1.1rem;
@@ -98,7 +101,7 @@
         }
         .secondary-btn:hover { border-color: #ff3366; }
 
-        /* Module 1.5: Hardware Layout */
+        /* Hardware Split Layout */
         .split-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -140,7 +143,7 @@
         }
         .spec-list li strong { color: #ffffff; }
 
-        /* Modules 2 & 3: Financial & Grid Blocks */
+        /* Financial & Feature Grids */
         .incentive-block {
             background-color: #1a1a1a;
             border: 1px solid #333;
@@ -172,7 +175,7 @@
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-top: 40px;
             text-align: left;
@@ -182,14 +185,10 @@
             padding: 25px;
             border-radius: 12px;
             border: 1px solid #2a2a2a;
+            background: linear-gradient(145deg, #1a1a1a, #111);
         }
         .feature-card h4 { color: #ff3366; margin-top: 0; font-size: 1.2rem; margin-bottom: 15px; }
         .feature-card p { color: #a0a0a0; font-size: 0.95rem; margin: 0; }
-        
-        .consumer-highlight {
-            border-color: #444;
-            background: linear-gradient(145deg, #1a1a1a, #111);
-        }
     </style>
 </head>
 <body>
@@ -208,6 +207,40 @@
     </div>
 
     <div class="section alt-bg">
+        <div class="container">
+            <h2>Your Current Phone is Holding You Back.</h2>
+            <p class="subtitle">Apple and Google treat your digital assets like an afterthought. We built a device that puts your crypto economy front and center.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Spend Crypto Like Cash</h4>
+                    <p>Natively integrated wallets mean you can use USDC for everyday purchases. Buy coffee, split bills, and manage your portfolio without jumping between exchanges and banking apps.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Ditch the Mini-Apps</h4>
+                    <p>Stop relying on clunky mobile browser extensions. Download true, native Web3 applications directly to your home screen for a frictionless, high-speed experience.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Unlock Device Hardware</h4>
+                    <p>Browser extensions are blocked from your phone's deep features. Natively installed Web3 apps can finally tap into NFC for real-world interactions and connect seamlessly to Bluetooth peripherals.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Fort Knox in Your Pocket</h4>
+                    <p>Your private keys are no longer vulnerable to software hacks. They are locked inside a dedicated hardware chip (TEE) on the phone's motherboard, offering hardware-wallet security with everyday ease of use.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>The Trust Layer</h4>
+                    <p>No more downloading drainer apps by mistake. We manually verify developers and enforce strict curation policies, ensuring a totally scam-free environment for everyday consumers.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Agentic AI Ready</h4>
+                    <p>Because our security is built directly into the hardware layer, your phone becomes the perfect, private environment to run powerful, personalized agentic AI technology completely on-device.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <div class="container">
             <div class="split-layout">
                 <div class="image-placeholder">
@@ -234,32 +267,6 @@
                         <li><strong>Battery</strong> <span>[ e.g., 5000 mAh Fast Charge ]</span></li>
                         <li><strong>Security</strong> <span>Hardware TEE Isolation</span></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <h2>Why Upgrade to a Web3 Native Device?</h2>
-            <p class="subtitle">Because you shouldn't have to fight your phone to use your assets.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card consumer-highlight">
-                    <h4>Spend Crypto Like Cash</h4>
-                    <p>Natively integrated wallets mean you can use USDC for everyday purchases. Buy coffee, split bills, and manage your portfolio without jumping between exchanges and banking apps.</p>
-                </div>
-                <div class="feature-card consumer-highlight">
-                    <h4>Ditch the Mini-Apps</h4>
-                    <p>Stop relying on clunky mobile browser extensions. Download true, native Web3 applications directly to your home screen for a frictionless, high-speed experience.</p>
-                </div>
-                <div class="feature-card consumer-highlight">
-                    <h4>Unlock Device Hardware</h4>
-                    <p>Browser extensions and web apps are completely blocked from your phone's deep features. Natively installed Web3 apps can finally tap into NFC for real-world interactions and connect seamlessly to Bluetooth peripherals for Web3 gaming.</p>
-                </div>
-                <div class="feature-card consumer-highlight">
-                    <h4>Hardware-Grade Security</h4>
-                    <p>Your private keys are no longer vulnerable to software hacks. They are locked inside a dedicated, isolated chip on the phone's motherboard, offering hardware-wallet security with Instagram-level ease of use.</p>
                 </div>
             </div>
         </div>
@@ -310,35 +317,12 @@
 
     <div class="section">
         <div class="container">
-            <h2>Hardware is a Commodity.<br>Distribution is the Moat.</h2>
-            
-            <p class="body-text">Forcing users into walled gardens and browser extensions will never drive mass adoption. Terran is the agnostic aggregator—natively embedded into partner Android devices at the factory. By removing the massive costs of building hardware ourselves, our software is infinitely scalable across the mobile industry.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>The Trust Layer</h4>
-                    <p>We provide verified developer access, rigorous app curation, and strict policy enforcement, ensuring a scam-free environment for retail consumers.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Hardware Isolation</h4>
-                    <p>Cryptographic keys are completely isolated from the standard Android OS via a Trusted Execution Environment (TEE), offering ironclad protection without sacrificing UX.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Agentic AI Ready</h4>
-                    <p>By securing the hardware layer, Terran creates the exact local, privacy-preserving infrastructure required to run the future agentic AI economy securely on-device.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section alt-bg">
-        <div class="container">
             <h2>Stop Building Mini-Apps.<br>Start Building Native.</h2>
             <p class="subtitle">The Terran App Builder SDK eliminates Android fragmentation.</p>
             
             <p class="body-text">Current Web3 mobile UX is broken. We are opening our proprietary Crypto Wallet and TEE SDKs to top-tier protocols. Write your application once, and Terran handles the rich, frictionless integration with native hardware features across our entire network of partner OEMs.</p>
             
-            <div class="feature-grid" style="margin-bottom: 40px;">
+            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 40px;">
                 <div class="feature-card">
                     <h4>On-Chain Progression</h4>
                     <p>Hit integration milestones, pass the Trust Layer review, and claim your verifiable on-chain certificates.</p>
