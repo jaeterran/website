@@ -88,6 +88,16 @@
             background-color: #e62e5c;
         }
 
+        .primary-btn.outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid #444;
+        }
+
+        .primary-btn.outline:hover {
+            border-color: var(--text-main);
+        }
+
         /* GRID & CARDS */
         .feature-grid {
             display: grid;
@@ -123,6 +133,57 @@
         
         .feature-card.highlight h4 {
             color: var(--accent);
+        }
+
+        /* HARDWARE SECTION (SPLIT LAYOUT) */
+        .split-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .split-layout > div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-placeholder {
+            border: 1px dashed #444;
+            border-radius: 12px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            flex-direction: column;
+            background: #111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table th {
+            text-align: left;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .specs-table td {
+            text-align: right;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* INCENTIVE BLOCKS (PRE-ORDER) */
@@ -244,7 +305,50 @@
         </div>
     </div>
 
-    <div class="section" id="pre-order">
+    <div class="section" id="hardware">
+        <div class="container">
+            <div class="split-layout">
+                <div>
+                    <div class="image-placeholder">
+                        <span style="font-size: 2rem; margin-bottom: 15px;">📱</span>
+                        [ Placeholder: High-Res Render of Schok Quantum Ultra ]
+                    </div>
+                </div>
+                <div>
+                    <h2>Meet the Schok Quantum Ultra.</h2>
+                    <p style="color: #cccccc; font-size: 1.1rem; margin-bottom: 20px;">Flagship performance backed by Tier-1 telecom standards.</p>
+                    <p style="color: #a0a0a0; margin-bottom: 20px;">We didn't reinvent the wheel; we partnered with the experts. Schok is a proven, high-volume hardware manufacturer trusted by the biggest networks in the world, including <strong>T-Mobile, Verizon, and Boost Mobile</strong>.</p>
+                    <p style="color: #a0a0a0; margin-bottom: 40px;">The Schok Quantum Ultra delivers enterprise-grade reliability, providing the perfect physical foundation for Terran's Web3 operating system.</p>
+                    
+                    <h4 style="border-bottom: 1px solid #333; padding-bottom: 10px;">Device Specifications</h4>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Display</th>
+                            <td>[ e.g., 6.7" OLED ]</td>
+                        </tr>
+                        <tr>
+                            <th>Processor</th>
+                            <td>[ e.g., Snapdragon 8 Gen 2 ]</td>
+                        </tr>
+                        <tr>
+                            <th>Memory</th>
+                            <td>[ e.g., 12GB RAM / 512GB Storage ]</td>
+                        </tr>
+                        <tr>
+                            <th>Battery</th>
+                            <td>[ e.g., 5000 mAh Fast Charge ]</td>
+                        </tr>
+                        <tr>
+                            <th>Security</th>
+                            <td>Hardware TEE Isolation</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section alt-bg" id="pre-order">
         <div class="container">
             <h2>Reserve Your Device. Start Earning Today.</h2>
             <p class="subtitle">Your pre-order does more than save your place in line. It immediately unlocks daily rewards.</p>
@@ -332,12 +436,43 @@
         </div>
     </div>
 
-    <div class="section alt-bg" id="developer">
+    <div class="section" id="developer">
         <div class="container">
-            <h2>Build the New Economy.</h2>
-            <p class="subtitle">Apply for early access to the Terran SDK and start building native applications for the Schok Quantum Ultra.</p>
-            <div style="margin-top: 40px;">
-                <a href="#" class="primary-btn">Apply for Dev Access</a>
+            <div style="color: #888; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px;">
+                For Founders & App Builders
+            </div>
+            
+            <h2>Stop Building for Crypto Insiders.<br>Build the Next Consumer Giant.</h2>
+            <p class="subtitle" style="color: #cccccc;">
+                Consumers don't care about blockchains. They just want apps that work. Launch your decentralized app in the Terran App Market and distribute directly to consumers with a seamless, native pipeline.
+            </p>
+
+            <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                <p class="body-text" style="margin-bottom: 20px;">
+                    To make Web3 truly mainstream, the technology must become invisible. But right now, you are stuck. You are forced to build clunky web extensions with zero hardware access, because standard operating systems simply aren't engineered to support complex Web3 mechanics natively.
+                </p>
+                <p class="body-text" style="margin-bottom: 40px;">
+                    Terran is the solution. We provide a native environment by embedding the <strong>Terran App Market</strong> directly into partner mobile devices—starting with the Schok Quantum Ultra. We actively curate, audit, and recommend the best Web3 applications right to the consumer's home screen. Under the hood, our WebAssembly (WASM) runtime lets you write in the languages you already know (Rust, Go, C++). To the consumer, it's a premium, one-click download. To you, it's absolute creative freedom and direct access to a massive audience.
+                </p>
+            </div>
+
+            <div class="feature-grid" style="margin-bottom: 50px;">
+                <div class="feature-card highlight">
+                    <h4>The Native Web3 App Market</h4>
+                    <p>Get discovered. Instead of fighting for visibility on generic web browsers, launch inside a dedicated, hardware-integrated storefront. We curate, audit, and push high-quality decentralized apps directly to everyday consumers.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 style="color: #ff3366;">Invisible Web3 Experiences</h4>
+                    <p>Your users shouldn't need a PhD in DeFi. Deliver seamless, home-screen-installed apps with buttery-smooth UX that everyday people actually want to use to fulfill their daily needs, completely abstracting the blockchain.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 style="color: #ff3366;">Unleash the Hardware</h4>
+                    <p>Stop building in a browser straightjacket. Get direct, system-level access to the phone's NFC, TEE (Secure Enclave), and Bluetooth to seamlessly connect gaming controllers, hardware wallets, and IoT devices.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#" class="primary-btn outline" style="padding: 15px 40px;">Apply for SDK Early Access</a>
             </div>
         </div>
     </div>
