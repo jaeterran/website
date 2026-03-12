@@ -1,41 +1,216 @@
-<div class="section" id="hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schok Quantum Ultra | Powered by Terran</title>
+    <style>
+        /* GLOBAL STYLES */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+            --accent: #ff3366;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --border-color: #222222;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-darker);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .alt-bg {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        p.body-text {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .primary-btn {
+            background-color: var(--text-main);
+            color: #000;
+            padding: 15px 35px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .primary-btn.accent {
+            background-color: var(--accent);
+            color: var(--text-main);
+        }
+
+        .primary-btn.accent:hover {
+            background-color: #e62e5c;
+        }
+
+        /* GRID & CARDS */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card h4 {
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .feature-card.highlight {
+            border-color: var(--accent);
+            background: linear-gradient(145deg, #1a1a1a, #111);
+        }
+        
+        .feature-card.highlight h4 {
+            color: var(--accent);
+        }
+
+        /* INCENTIVE BLOCKS (PRE-ORDER) */
+        .incentive-block {
+            background-color: #111;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .multiplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .multiplier-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px 10px;
+        }
+
+        .multiplier-rate {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .multiplier-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section" id="hero">
         <div class="container">
-            <div class="pre-header" style="color: #ff3366; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px;">In Stealth. Early Access Open.</div>
+            <div style="color: #ff3366; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px;">
+                In Stealth. Early Access Open.
+            </div>
             
-            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px; color: #ffffff;">The Ultimate Crypto Smartphone.</h1>
-            <p class="subtitle" style="font-size: 1.25rem; color: #cccccc; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6;">Leave the complicated workarounds behind. Whether you are managing your portfolio or exploring decentralized apps, the Terran-enabled Schok Quantum Ultra is your direct connection to the new digital economy. Experience crypto as it was meant to be: effortless, invisible, and truly yours.</p>
+            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px;">The Ultimate Crypto Smartphone.</h1>
+            <p class="subtitle" style="font-size: 1.25rem;">
+                Leave the complicated workarounds behind. Whether you are managing your portfolio or exploring decentralized apps, the Terran-enabled Schok Quantum Ultra is your direct connection to the new digital economy. Experience crypto as it was meant to be: effortless, invisible, and truly yours.
+            </p>
             
-            <div class="cta-container">
-                <a href="#pre-order" class="primary-btn" style="background-color: #ffffff; color: #000000; padding: 15px 35px; font-weight: bold; border-radius: 8px; text-decoration: none; font-size: 1.1rem; display: inline-block;">Reserve Yours Today</a>
+            <div style="margin-top: 40px;">
+                <a href="#pre-order" class="primary-btn">Reserve Yours Today</a>
             </div>
         </div>
     </div>
 
-    <div class="section alt-bg" style="background-color: #0a0a0a; padding: 80px 0;">
+    <div class="section alt-bg">
         <div class="container">
-            <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 15px;">The Best Smartphone for Crypto.</h2>
-            <p class="subtitle" style="color: #a0a0a0; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; line-height: 1.6;">Standard phones treat your digital assets like an afterthought. The Schok Quantum Ultra is engineered to be the ultimate tool for trading, spending, and securing your cryptocurrency natively.</p>
+            <h2>The Best Smartphone for Crypto.</h2>
+            <p class="subtitle">
+                Standard phones treat your digital assets like an afterthought. The Schok Quantum Ultra is engineered to be the ultimate tool for trading, spending, and securing your cryptocurrency natively.
+            </p>
             
             <div style="margin-top: 50px; text-align: left;">
-                <h3 style="color: #ffffff; font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
                     <span style="color: #ff3366;">1 //</span> For the Everyday User: Crypto Made Simple
                 </h3>
-                <p class="body-text" style="max-width: 800px; color: #cccccc; line-height: 1.6; font-size: 1.1rem;">
+                <p class="body-text" style="max-width: 800px;">
                     Standard smartphones make crypto complicated. We fixed that. Terran makes buying, holding, and using Bitcoin, Ethereum, and other digital assets as easy as sending a text message—all without changing how you use your normal daily apps.
                 </p>
                 
-                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
-                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
-                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">Pay With Crypto</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Use your digital assets in the real world. With built-in wallets, you can use digital dollars (like USDC) or Bitcoin to buy your morning coffee, split a dinner bill with friends, or send money globally instantly—without bank fees.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Pay With Crypto</h4>
+                        <p>Use your digital assets in the real world. With built-in wallets, you can use digital dollars (like USDC) or Bitcoin to buy your morning coffee, split a dinner bill with friends, or send money globally instantly—without bank fees.</p>
                     </div>
-                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
-                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">Apps That Reward You</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Discover a completely new kind of app ecosystem. Instead of mega-corporations making money off your data, these apps reward <em>you</em>. Download games that pay you real crypto for playing, or fitness apps that reward you for walking.</p>
+                    <div class="feature-card">
+                        <h4>Apps That Reward You</h4>
+                        <p>Discover a completely new kind of app ecosystem. Instead of mega-corporations making money off your data, these apps reward <em>you</em>. Download games that pay you real crypto for playing, or fitness apps that reward you for walking.</p>
                     </div>
-                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
-                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">The Best Apps, Hand-Picked</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Skip the endless searching. We constantly curate and recommend the top-performing apps across gaming, finance, and lifestyle. Whether you want to earn rewards or just play, we bring the best of the digital economy right to you.</p>
+                    <div class="feature-card">
+                        <h4>The Best Apps, Hand-Picked</h4>
+                        <p>Skip the endless searching. We constantly curate and recommend the top-performing apps across gaming, finance, and lifestyle. Whether you want to earn rewards or just play, we bring the best of the digital economy right to you.</p>
                     </div>
                 </div>
             </div>
@@ -43,25 +218,25 @@
             <hr style="border: 0; height: 1px; background: #333; margin: 60px 0;">
 
             <div style="text-align: left;">
-                <h3 style="color: #ffffff; font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
                     <span style="color: #ff3366;">2 //</span> For the Web3 Native: The Catalyst for Mass Adoption
                 </h3>
-                <p class="body-text" style="max-width: 800px; color: #cccccc; line-height: 1.6; font-size: 1.1rem;">
+                <p class="body-text" style="max-width: 800px;">
                     If we want to onboard the next billion users, we can't force Web3 protocols into Web2 boxes. Mass adoption requires specialized hardware and a dedicated distribution channel. Here is how the Schok Quantum Ultra solves the industry's biggest bottlenecks.
                 </p>
                 
-                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
-                    <div class="feature-card" style="border: 1px solid #ff3366; background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px;">
-                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">The Trojan Horse UX</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Mass adoption doesn't happen when we force normies to write down 12 words. By binding cryptographic keys directly to the device's Trusted Execution Environment (TEE), we deliver hardware-wallet security combined with seamless Web2 convenience.</p>
+                <div class="feature-grid">
+                    <div class="feature-card highlight">
+                        <h4>The Trojan Horse UX</h4>
+                        <p>Mass adoption doesn't happen when we force normies to write down 12 words. By binding cryptographic keys directly to the device's Trusted Execution Environment (TEE), we deliver hardware-wallet security combined with seamless Web2 convenience.</p>
                     </div>
-                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px; border: 1px solid #222;">
-                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">A Native Distribution Channel</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">To reach global consumers seamlessly, developers need an environment built from the ground up for Web3. Terran provides the exact native infrastructure required for complex tokenized economies and agentic AI to flourish on-device.</p>
+                    <div class="feature-card highlight">
+                        <h4>A Native Distribution Channel</h4>
+                        <p>To reach global consumers seamlessly, developers need an environment built from the ground up for Web3. Terran provides the exact native infrastructure required for complex tokenized economies and agentic AI to flourish on-device.</p>
                     </div>
-                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px; border: 1px solid #222;">
-                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">Real-World DePIN & IoT Utility</h4>
-                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Web3 isn't just about trading anymore. With unmitigated access to the phone's NFC and Bluetooth APIs, the Schok Quantum Ultra enables true real-world utility—from tap-to-pay crypto interfaces to flawless, immediate integration with DePIN hardware and IoT networks.</p>
+                    <div class="feature-card highlight">
+                        <h4>Real-World DePIN & IoT Utility</h4>
+                        <p>Web3 isn't just about trading anymore. With unmitigated access to the phone's NFC and Bluetooth APIs, the Schok Quantum Ultra enables true real-world utility—from tap-to-pay crypto interfaces to flawless, immediate integration with DePIN hardware and IoT networks.</p>
                     </div>
                 </div>
             </div>
@@ -69,13 +244,13 @@
         </div>
     </div>
 
-    <div class="section" id="pre-order" style="padding: 80px 0;">
+    <div class="section" id="pre-order">
         <div class="container">
-            <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 15px;">Reserve Your Device. Start Earning Today.</h2>
-            <p class="subtitle" style="color: #a0a0a0; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; line-height: 1.6;">Your pre-order does more than save your place in line. It immediately unlocks daily rewards.</p>
+            <h2>Reserve Your Device. Start Earning Today.</h2>
+            <p class="subtitle">Your pre-order does more than save your place in line. It immediately unlocks daily rewards.</p>
 
-            <div class="incentive-block" style="text-align: center; border: 1px solid #ff3366; background: linear-gradient(145deg, #1a1a1a, #111); border-radius: 16px; padding: 40px; margin-bottom: 40px;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #ffffff;">Early Access Pre-Order</h3>
+            <div class="incentive-block" style="text-align: center; border-color: #ff3366; background: linear-gradient(145deg, #1a1a1a, #111);">
+                <h3 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;">Early Access Pre-Order</h3>
                 
                 <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 25px; flex-wrap: wrap;">
                     <div style="text-align: center;">
@@ -96,15 +271,76 @@
                 </p>
 
                 <div style="background-color: #0a0a0a; border: 1px solid #333; border-radius: 8px; padding: 15px 20px; max-width: 600px; margin: 0 auto;">
-                    <span style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.5; display: inline-block;">
+                    <span style="color: #a0a0a0; font-size: 0.95rem;">
                         <strong style="color: #fff; font-size: 1.05rem;">Total Retail Price: $649.00</strong><br>
                         Your $100 deposit secures your Schok Quantum Ultra and activates your daily rewards. The remaining $549 balance is only due when your hardware is ready to ship.
                     </span>
                 </div>
             </div>
 
-            <div class="cta-container" style="margin-top: 40px; text-align: center;">
-                <a href="#" class="primary-btn" style="background-color: #ff3366; color: #ffffff; padding: 20px 50px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block;">Connect Wallet to Deposit $100 USDC</a>
+            <div class="incentive-block">
+                <h3 style="margin-bottom: 5px;">Early Adopter Timeline</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0; margin-bottom: 25px;">The earlier you reserve, the faster you earn. Secure your device before the public launch to lock in a permanent multiplier.</p>
+                
+                <div class="feature-grid" style="margin-top: 0;">
+                    <div class="feature-card highlight" style="position: relative;">
+                        <div style="position: absolute; top: -12px; right: 20px; background: #ff3366; color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Active</div>
+                        <h4>Phase 1: Genesis</h4>
+                        <p style="font-size: 0.8rem; color: #ff3366; margin-bottom: 15px; font-weight: bold;">April 1 – May 31, 2026</p>
+                        <p style="color: #cccccc;"><strong>Reward:</strong> 3x Base Earning Rate + VIP Account Status.</p>
+                    </div>
+                    <div class="feature-card" style="opacity: 0.7;">
+                        <h4 style="color: #888;">Phase 2: Pioneer</h4>
+                        <p style="font-size: 0.8rem; margin-bottom: 15px;">June 1 – July 31, 2026</p>
+                        <p style="color: #888;"><strong>Reward:</strong> 1.5x Base Earning Rate.</p>
+                    </div>
+                    <div class="feature-card" style="opacity: 0.7;">
+                        <h4 style="color: #888;">Phase 3: Public</h4>
+                        <p style="font-size: 0.8rem; margin-bottom: 15px;">August 2026 Onward</p>
+                        <p style="color: #888;"><strong>Reward:</strong> Standard Retail Purchase (No early multipliers).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="incentive-block">
+                <h3 style="margin-bottom: 5px;">Multiply Your Daily Rewards</h3>
+                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Generate your unique referral link, invite others to reserve their Schok Quantum Ultra, and automatically stack these multipliers on top of your daily earning rate.</p>
+                
+                <div class="multiplier-grid">
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.0x</div>
+                        <div class="multiplier-label">Base (0 Referrals)</div>
+                    </div>
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.2x</div>
+                        <div class="multiplier-label">Scout (1-4)</div>
+                    </div>
+                    <div class="multiplier-card">
+                        <div class="multiplier-rate">1.5x</div>
+                        <div class="multiplier-label">Node (5-19)</div>
+                    </div>
+                    <div class="multiplier-card" style="border-color: #444; background: linear-gradient(145deg, #222, #1a1a1a);">
+                        <div class="multiplier-rate" style="color: #ff3366;">2.0x</div>
+                        <div class="multiplier-label">Validator (20+)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px; text-align: center;">
+                <a href="#" class="primary-btn accent" style="padding: 20px 50px; font-size: 1.2rem;">Connect Wallet to Deposit $100 USDC</a>
             </div>
         </div>
     </div>
+
+    <div class="section alt-bg" id="developer">
+        <div class="container">
+            <h2>Build the New Economy.</h2>
+            <p class="subtitle">Apply for early access to the Terran SDK and start building native applications for the Schok Quantum Ultra.</p>
+            <div style="margin-top: 40px;">
+                <a href="#" class="primary-btn">Apply for Dev Access</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
