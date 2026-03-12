@@ -1,236 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelloTerran | The Web3 App Store</title>
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        
-        /* Container and Section Spacing */
-        .section {
-            padding: 80px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        .container {
-            max-width: 1000px;
-            width: 100%;
-        }
-        .alt-bg {
-            background-color: #111111;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-        }
-
-        /* Typography */
-        .pre-header {
-            color: #ff3366;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        h1 {
-            font-size: 3.5rem;
-            margin: 0 0 20px 0;
-            line-height: 1.1;
-            font-weight: 800;
-        }
-        h2 {
-            font-size: 2.5rem;
-            margin: 0 0 20px 0;
-            font-weight: 700;
-        }
-        p.subtitle {
-            font-size: 1.25rem;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        p.body-text {
-            font-size: 1.1rem;
-            color: #cccccc;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        /* Buttons */
-        .cta-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-        .primary-btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 18px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.2s;
-        }
-        .primary-btn:hover { background-color: #e0e0e0; }
-        
-        .secondary-btn {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #333;
-            padding: 16px 36px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-        .secondary-btn:hover { border-color: #ff3366; }
-
-        /* Hardware Split Layout */
-        .split-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            text-align: left;
-        }
-        @media (max-width: 768px) {
-            .split-layout { grid-template-columns: 1fr; }
-        }
-        .image-placeholder {
-            background-color: #1a1a1a;
-            border: 2px dashed #444;
-            border-radius: 12px;
-            height: 450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 20px;
-            text-align: center;
-        }
-        .spec-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        .spec-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #222;
-            color: #a0a0a0;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.95rem;
-        }
-        .spec-list li strong { color: #ffffff; }
-
-        /* Financial & Feature Grids */
-        .incentive-block {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: left;
-            margin-bottom: 40px;
-        }
-        .incentive-block h3 { margin-top: 0; font-size: 1.2rem; }
-        .incentive-block ul { list-style-type: none; padding: 0; margin: 0; color: #b0b0b0; }
-        .incentive-block li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        .incentive-block li::before { content: "→"; position: absolute; left: 0; color: #ff3366; }
-        
-        .multiplier-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .multiplier-card {
-            background-color: #222;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            text-align: center;
-        }
-        .multiplier-rate { font-size: 1.5rem; font-weight: bold; color: #ffffff; }
-        .multiplier-label { font-size: 0.85rem; color: #888; margin-top: 5px; }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-            text-align: left;
-        }
-        .feature-card {
-            background-color: #161616;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #2a2a2a;
-            background: linear-gradient(145deg, #1a1a1a, #111);
-        }
-        .feature-card h4 { color: #ff3366; margin-top: 0; font-size: 1.2rem; margin-bottom: 15px; }
-        .feature-card p { color: #a0a0a0; font-size: 0.95rem; margin: 0; }
-    </style>
-</head>
-<body>
-
-    <div class="section">
+<div class="section" id="hero">
         <div class="container">
-            <div class="pre-header">In Stealth. Early Access Open.</div>
+            <div class="pre-header" style="color: #ff3366; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; margin-bottom: 20px;">In Stealth. Early Access Open.</div>
             
-            <h1>The Ultimate Crypto Smartphone.</h1>
-            <p class="subtitle">Leave the complicated workarounds behind. Whether you are managing your portfolio or exploring decentralized apps, this is your direct connection to the new digital economy. Experience crypto as it was meant to be: effortless, invisible, and truly yours.</p>
+            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 20px; color: #ffffff;">The Ultimate Crypto Smartphone.</h1>
+            <p class="subtitle" style="font-size: 1.25rem; color: #cccccc; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6;">Leave the complicated workarounds behind. Whether you are managing your portfolio or exploring decentralized apps, the Terran-enabled Schok Quantum Ultra is your direct connection to the new digital economy. Experience crypto as it was meant to be: effortless, invisible, and truly yours.</p>
             
             <div class="cta-container">
-                <a href="#pre-order" class="primary-btn">Reserve Yours Today</a>
+                <a href="#pre-order" class="primary-btn" style="background-color: #ffffff; color: #000000; padding: 15px 35px; font-weight: bold; border-radius: 8px; text-decoration: none; font-size: 1.1rem; display: inline-block;">Reserve Yours Today</a>
             </div>
         </div>
     </div>
 
-    <div class="section alt-bg">
+    <div class="section alt-bg" style="background-color: #0a0a0a; padding: 80px 0;">
         <div class="container">
-            <h2>The Best Smartphone for Crypto.</h2>
-            <p class="subtitle">Standard phones treat your digital assets like an afterthought. The Terran-enabled Schok Gear is engineered to be the ultimate tool for trading, spending, and securing your cryptocurrency natively.</p>
+            <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 15px;">The Best Smartphone for Crypto.</h2>
+            <p class="subtitle" style="color: #a0a0a0; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; line-height: 1.6;">Standard phones treat your digital assets like an afterthought. The Schok Quantum Ultra is engineered to be the ultimate tool for trading, spending, and securing your cryptocurrency natively.</p>
             
             <div style="margin-top: 50px; text-align: left;">
                 <h3 style="color: #ffffff; font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
                     <span style="color: #ff3366;">1 //</span> For the Everyday User: Crypto Made Simple
                 </h3>
-                <p class="body-text" style="max-width: 800px;">
+                <p class="body-text" style="max-width: 800px; color: #cccccc; line-height: 1.6; font-size: 1.1rem;">
                     Standard smartphones make crypto complicated. We fixed that. Terran makes buying, holding, and using Bitcoin, Ethereum, and other digital assets as easy as sending a text message—all without changing how you use your normal daily apps.
                 </p>
                 
-                <div class="feature-grid" style="margin-top: 30px;">
-                    <div class="feature-card">
-                        <h4 style="color: #ffffff;">Pay With Crypto</h4>
-                        <p>Use your digital assets in the real world. With built-in wallets, you can use digital dollars (like USDC) or Bitcoin to buy your morning coffee, split a dinner bill with friends, or send money globally instantly—without bank fees.</p>
+                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">Pay With Crypto</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Use your digital assets in the real world. With built-in wallets, you can use digital dollars (like USDC) or Bitcoin to buy your morning coffee, split a dinner bill with friends, or send money globally instantly—without bank fees.</p>
                     </div>
-                    <div class="feature-card">
-                        <h4 style="color: #ffffff;">Apps That Reward You</h4>
-                        <p>Discover a completely new kind of app store. Instead of mega-corporations making money off your data, these apps reward <em>you</em>. Download games that pay you real crypto for playing, or fitness apps that reward you for walking.</p>
+                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">Apps That Reward You</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Discover a completely new kind of app ecosystem. Instead of mega-corporations making money off your data, these apps reward <em>you</em>. Download games that pay you real crypto for playing, or fitness apps that reward you for walking.</p>
                     </div>
-                    <div class="feature-card">
-                        <h4 style="color: #ffffff;">The Best Apps, Hand-Picked</h4>
-                        <p>Skip the endless searching. We constantly curate and recommend the top-performing apps across gaming, finance, and lifestyle. Whether you want to earn rewards or just play, we bring the best of the digital economy right to you.</p>
+                    <div class="feature-card" style="background: #111; padding: 30px; border-radius: 12px; border: 1px solid #222;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem;">The Best Apps, Hand-Picked</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Skip the endless searching. We constantly curate and recommend the top-performing apps across gaming, finance, and lifestyle. Whether you want to earn rewards or just play, we bring the best of the digital economy right to you.</p>
                     </div>
                 </div>
             </div>
@@ -241,22 +46,22 @@
                 <h3 style="color: #ffffff; font-size: 1.8rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 30px;">
                     <span style="color: #ff3366;">2 //</span> For the Web3 Native: The Catalyst for Mass Adoption
                 </h3>
-                <p class="body-text" style="max-width: 800px;">
-                    If we want to onboard the next billion users, we can't force Web3 protocols into Web2 boxes. Mass adoption requires specialized hardware and a dedicated distribution channel. Here is how Terran solves the industry's biggest bottlenecks.
+                <p class="body-text" style="max-width: 800px; color: #cccccc; line-height: 1.6; font-size: 1.1rem;">
+                    If we want to onboard the next billion users, we can't force Web3 protocols into Web2 boxes. Mass adoption requires specialized hardware and a dedicated distribution channel. Here is how the Schok Quantum Ultra solves the industry's biggest bottlenecks.
                 </p>
                 
-                <div class="feature-grid" style="margin-top: 30px;">
-                    <div class="feature-card" style="border-color: #ff3366; background: linear-gradient(145deg, #1a1a1a, #111);">
-                        <h4 style="color: #ff3366;">The Trojan Horse UX</h4>
-                        <p>Mass adoption doesn't happen when we force normies to write down 12 words. By binding cryptographic keys directly to the device's Trusted Execution Environment (TEE), we deliver hardware-wallet security combined with seamless Web2 convenience.</p>
+                <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+                    <div class="feature-card" style="border: 1px solid #ff3366; background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px;">
+                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">The Trojan Horse UX</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Mass adoption doesn't happen when we force normies to write down 12 words. By binding cryptographic keys directly to the device's Trusted Execution Environment (TEE), we deliver hardware-wallet security combined with seamless Web2 convenience.</p>
                     </div>
-                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111);">
-                        <h4 style="color: #ff3366;">A Native Distribution Channel</h4>
-                        <p>To reach global consumers seamlessly, developers need an environment built from the ground up for Web3. Terran provides the exact native infrastructure required for complex tokenized economies and agentic AI to flourish on-device.</p>
+                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px; border: 1px solid #222;">
+                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">A Native Distribution Channel</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">To reach global consumers seamlessly, developers need an environment built from the ground up for Web3. Terran provides the exact native infrastructure required for complex tokenized economies and agentic AI to flourish on-device.</p>
                     </div>
-                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111);">
-                        <h4 style="color: #ff3366;">Real-World DePIN & IoT Utility</h4>
-                        <p>Web3 isn't just about trading anymore. With unmitigated access to the phone's NFC and Bluetooth APIs, Terran enables true real-world utility—from tap-to-pay crypto interfaces to flawless, immediate integration with DePIN hardware and IoT networks.</p>
+                    <div class="feature-card" style="background: linear-gradient(145deg, #1a1a1a, #111); padding: 30px; border-radius: 12px; border: 1px solid #222;">
+                        <h4 style="color: #ff3366; margin-bottom: 15px; font-size: 1.2rem;">Real-World DePIN & IoT Utility</h4>
+                        <p style="color: #a0a0a0; line-height: 1.5; font-size: 0.95rem;">Web3 isn't just about trading anymore. With unmitigated access to the phone's NFC and Bluetooth APIs, the Schok Quantum Ultra enables true real-world utility—from tap-to-pay crypto interfaces to flawless, immediate integration with DePIN hardware and IoT networks.</p>
                     </div>
                 </div>
             </div>
@@ -264,45 +69,13 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="pre-order" style="padding: 80px 0;">
         <div class="container">
-            <div class="split-layout">
-                <div class="image-placeholder">
-                    <span style="font-size: 2rem; color: #444; margin-bottom: 10px;">📱</span>
-                    [ Placeholder: High-Res Render of Schok Gear ]
-                </div>
-                
-                <div>
-                    <h2 style="margin-bottom: 10px; font-size: 2.2rem;">Meet the Schok Gear.</h2>
-                    <p class="subtitle" style="text-align: left; font-size: 1.1rem; margin-bottom: 20px;">Flagship performance backed by Tier-1 telecom standards.</p>
-                    
-                    <p class="body-text" style="margin-bottom: 15px;">
-                        We didn't reinvent the wheel; we partnered with the experts. Schok is a proven, high-volume hardware manufacturer trusted by the biggest networks in the world, including <strong>T-Mobile, Verizon, and Boost Mobile</strong>.
-                    </p>
-                    <p class="body-text" style="margin-bottom: 25px;">
-                        The Schok Gear delivers enterprise-grade reliability, providing the perfect physical foundation for Terran's Web3 operating system.
-                    </p>
-                    
-                    <h4 style="color: #ffffff; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px;">Device Specifications</h4>
-                    <ul class="spec-list">
-                        <li><strong>Display</strong> <span>[ e.g., 6.7" OLED ]</span></li>
-                        <li><strong>Processor</strong> <span>[ e.g., Snapdragon 8 Gen 2 ]</span></li>
-                        <li><strong>Memory</strong> <span>[ e.g., 12GB RAM / 512GB Storage ]</span></li>
-                        <li><strong>Battery</strong> <span>[ e.g., 5000 mAh Fast Charge ]</span></li>
-                        <li><strong>Security</strong> <span>Hardware TEE Isolation</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+            <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 15px;">Reserve Your Device. Start Earning Today.</h2>
+            <p class="subtitle" style="color: #a0a0a0; max-width: 800px; margin: 0 auto 50px auto; font-size: 1.15rem; line-height: 1.6;">Your pre-order does more than save your place in line. It immediately unlocks daily rewards.</p>
 
-    <div class="section alt-bg" id="pre-order">
-        <div class="container">
-            <h2>Reserve Your Device. Start Earning Today.</h2>
-            <p class="subtitle">Your pre-order does more than save your place in line. It immediately unlocks daily rewards.</p>
-
-            <div class="incentive-block" style="text-align: center; border-color: #ff3366; background: linear-gradient(145deg, #1a1a1a, #111);">
-                <h3 style="font-size: 1.8rem; margin-bottom: 25px;">Early Access Pre-Order</h3>
+            <div class="incentive-block" style="text-align: center; border: 1px solid #ff3366; background: linear-gradient(145deg, #1a1a1a, #111); border-radius: 16px; padding: 40px; margin-bottom: 40px;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #ffffff;">Early Access Pre-Order</h3>
                 
                 <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 25px; flex-wrap: wrap;">
                     <div style="text-align: center;">
@@ -319,130 +92,19 @@
                 </div>
                 
                 <p style="color: #cccccc; max-width: 800px; margin: 0 auto 25px auto; line-height: 1.6; text-align: center; font-size: 1.15rem;">
-                    Unlike a standard pre-order where your money just sits there, your $100 deposit goes to work immediately. While the rest of the world waits for the public launch, securing your device today locks in our highest 3x early-adopter reward rate. You will automatically earn Terran Points every single hour you wait for your phone to ship.
+                    Unlike a standard pre-order where your money just sits there, your $100 deposit goes to work immediately. While the rest of the world waits for the public launch, securing your Schok Quantum Ultra today locks in our highest 3x early-adopter reward rate. You will automatically earn Terran Points every single hour you wait for your phone to ship.
                 </p>
 
-                <div style="background-color: #0a0a0a; border: 1px solid #333; border-radius: 8px; padding: 12px 20px; max-width: 550px; margin: 0 auto;">
-                    <span style="color: #a0a0a0; font-size: 0.95rem;">
-                        <strong>Total Retail Price: $649.00</strong><br>
-                        Your $100 deposit secures your device and activates your daily rewards. The remaining $549 balance is only due when your hardware is ready to ship.
+                <div style="background-color: #0a0a0a; border: 1px solid #333; border-radius: 8px; padding: 15px 20px; max-width: 600px; margin: 0 auto;">
+                    <span style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.5; display: inline-block;">
+                        <strong style="color: #fff; font-size: 1.05rem;">Total Retail Price: $649.00</strong><br>
+                        Your $100 deposit secures your Schok Quantum Ultra and activates your daily rewards. The remaining $549 balance is only due when your hardware is ready to ship.
                     </span>
                 </div>
             </div>
 
-            <div class="incentive-block">
-                <h3>Early Adopter Timeline</h3>
-                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0; margin-bottom: 25px;">The earlier you reserve, the faster you earn. Secure your device before the public launch to lock in a permanent multiplier.</p>
-                
-                <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 0;">
-                    <div class="feature-card" style="border-color: #ff3366; position: relative; background-color: #1a1a1a;">
-                        <div style="position: absolute; top: -12px; right: 20px; background: #ff3366; color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Active</div>
-                        <h4 style="margin-bottom: 5px; color: #ffffff;">Phase 1: Genesis</h4>
-                        <p style="font-size: 0.8rem; color: #ff3366; margin-bottom: 15px; font-weight: bold;">April 1 – May 31, 2026</p>
-                        <p style="font-size: 0.9rem; color: #cccccc; margin: 0;"><strong>Reward:</strong> 3x Base Earning Rate + VIP Account Status.</p>
-                    </div>
-                    <div class="feature-card" style="opacity: 0.7;">
-                        <h4 style="margin-bottom: 5px; color: #888;">Phase 2: Pioneer</h4>
-                        <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">June 1 – July 31, 2026</p>
-                        <p style="font-size: 0.9rem; color: #888; margin: 0;"><strong>Reward:</strong> 1.5x Base Earning Rate.</p>
-                    </div>
-                    <div class="feature-card" style="opacity: 0.7;">
-                        <h4 style="margin-bottom: 5px; color: #888;">Phase 3: Public</h4>
-                        <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">August 2026 Onward</p>
-                        <p style="font-size: 0.9rem; color: #888; margin: 0;"><strong>Reward:</strong> Standard Retail Purchase (No early multipliers).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="incentive-block">
-                <h3>Understanding Terran Points</h3>
-                <ul style="margin-top: 15px;">
-                    <li><strong>What are they?</strong> Terran Points are our way of rewarding early supporters. At launch, these accumulated points will convert into the native Terran ecosystem token.</li>
-                    <li><strong>How do you earn them?</strong> Once you place your deposit, you automatically accrue points every single day until your device ships. The sooner you reserve, the more you earn.</li>
-                </ul>
-            </div>
-
-            <div class="incentive-block">
-                <h3>Multiply Your Daily Rewards</h3>
-                <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: 0;">Generate your unique referral link, invite others to reserve their device, and automatically stack these multipliers on top of your daily earning rate.</p>
-                
-                <div class="multiplier-grid">
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.0x</div>
-                        <div class="multiplier-label">Base (0 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.2x</div>
-                        <div class="multiplier-label">Scout (1-4 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card">
-                        <div class="multiplier-rate">1.5x</div>
-                        <div class="multiplier-label">Node (5-19 Referrals)</div>
-                    </div>
-                    <div class="multiplier-card" style="border-color: #444; background: linear-gradient(145deg, #222, #1a1a1a);">
-                        <div class="multiplier-rate" style="color: #ff3366;">2.0x</div>
-                        <div class="multiplier-label">Validator (20+)</div>
-                    </div>
-                </div>
-                <p style="color: #ff3366; font-size: 0.85rem; margin-top: 20px;">* Used a crypto wallet before? We offer an instant, one-time lump-sum point bonus upon deposit for active on-chain users.</p>
-            </div>
-
-            <div class="cta-container" style="margin-top: 40px;">
-                <a href="#" class="primary-btn" style="padding: 20px 50px; font-size: 1.2rem;">Connect Wallet to Deposit $100 USDC</a>
+            <div class="cta-container" style="margin-top: 40px; text-align: center;">
+                <a href="#" class="primary-btn" style="background-color: #ff3366; color: #ffffff; padding: 20px 50px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block;">Connect Wallet to Deposit $100 USDC</a>
             </div>
         </div>
     </div>
-
-    <div class="section">
-        <div class="container">
-            <div class="pre-header" style="color: #a0a0a0;">For Founders & App Builders</div>
-            
-            <h2>Stop Building for Crypto Insiders.<br>Build the Next Consumer Giant.</h2>
-            <p class="subtitle">Consumers don't care about blockchains. They just want apps that work. Launch your decentralized app in the Terran App Market and distribute directly to consumers without Apple or Google standing in the way.</p>
-            
-            <p class="body-text" style="margin-bottom: 20px;">
-                To make Web3 truly mainstream, the technology must become invisible. But right now, you are stuck. You are forced to build clunky web extensions with zero hardware access, or you risk getting your app instantly banned by Apple and Google. You cannot reach everyday, global Android users with an experience that rivals their favorite Web2 apps. 
-            </p>
-            
-            <p class="body-text" style="margin-bottom: 40px;">
-                Terran is the solution. We bypass the gatekeepers by embedding the <strong>Terran App Market</strong> directly into partner mobile devices—starting with the Schok Gear. We actively curate, audit, and recommend the best Web3 applications right to the consumer's home screen. Under the hood, our WebAssembly (WASM) runtime lets you write in the languages you already know (Rust, Go, C++). To the consumer, it’s a premium, one-click download. To you, it’s absolute creative freedom and a direct pipeline to a massive audience.
-            </p>
-            
-            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-bottom: 40px;">
-                <div class="feature-card" style="border-color: #ff3366;">
-                    <h4 style="color: #ffffff;">The Native Web3 App Market</h4>
-                    <p>Get discovered. Instead of fighting for visibility on generic web browsers, launch inside a dedicated, hardware-integrated storefront. We curate, audit, and push high-quality decentralized apps directly to everyday consumers.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Invisible Web3 Experiences</h4>
-                    <p>Your users shouldn't need a PhD in DeFi. Deliver seamless, home-screen-installed apps with buttery-smooth UX that everyday people actually want to use to fulfill their daily needs, completely abstracting the blockchain.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Unleash the Hardware</h4>
-                    <p>Stop building in a browser straightjacket. Get direct, system-level access to the phone’s NFC, TEE (Secure Enclave), and Bluetooth to seamlessly connect gaming controllers, hardware wallets, and IoT devices.</p>
-                </div>
-            </div>
-
-            <div class="cta-container">
-                <a href="#" class="secondary-btn">Apply for SDK Early Access</a>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
